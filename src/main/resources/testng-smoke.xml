@@ -1,0 +1,7 @@
+<suite name = "Smoke tests" verbose="1" >
+    <test name="Smoke path tests" >
+        <packages>
+            <package name="test.java.jsonplaceholder.api.positive.GetPostsTest" />
+        </packages>
+    </test>>
+</suite>

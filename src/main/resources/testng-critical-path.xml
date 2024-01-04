@@ -1,0 +1,7 @@
+<suite name = "Critical path tests" verbose="1" >
+    <test name="Critical path tests" >
+        <packages>
+            <package name="test.java.jsonplaceholder.api.positive" />
+        </packages>
+    </test>>
+</suite>
