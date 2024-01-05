@@ -5,7 +5,6 @@ import jsonplaceholder.api.AbstractTest;
 import jsonplaceholder.api.TestConfiguration;
 import org.apache.http.HttpStatus;
 import org.junit.jupiter.api.Test;
-
 import java.security.SecureRandom;
 
 import static io.restassured.RestAssured.given;

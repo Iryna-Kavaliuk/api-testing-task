@@ -7,16 +7,19 @@ import jsonplaceholder.api.service.CommentService;
 import model.Comment;
 import org.apache.http.HttpStatus;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.parallel.Execution;
+import org.junit.jupiter.api.parallel.ExecutionMode;
 import java.security.SecureRandom;
 
 import static io.restassured.RestAssured.given;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+@Execution(ExecutionMode.SAME_THREAD)
 public class GetCommentsNegativeTest extends AbstractTest {
 
   @Test
   public void testGetCommentsToNonExistingPost() {
-    int postId = new SecureRandom().nextInt(postsNumber + 1, postsNumber * 2);
+    int postId = new SecureRandom().nextInt(postsNumber + 2, postsNumber * 2);
     RestAssured.basePath =
         TestConfiguration.basePostPath + "/" + postId + "/" + TestConfiguration.baseCommentPath;
     given().

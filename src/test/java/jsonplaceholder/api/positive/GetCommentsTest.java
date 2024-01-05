@@ -4,10 +4,13 @@ import jsonplaceholder.api.AbstractTest;
 import jsonplaceholder.api.service.CommentService;
 import model.Comment;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.parallel.Execution;
+import org.junit.jupiter.api.parallel.ExecutionMode;
 import java.security.SecureRandom;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+@Execution(ExecutionMode.SAME_THREAD)
 public class GetCommentsTest extends AbstractTest {
 
   @Test

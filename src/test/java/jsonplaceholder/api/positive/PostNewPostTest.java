@@ -4,6 +4,8 @@ import jsonplaceholder.api.AbstractTest;
 import model.Post;
 import org.apache.http.HttpStatus;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.parallel.Execution;
+import org.junit.jupiter.api.parallel.ExecutionMode;
 import service.PostFactory;
 import java.security.SecureRandom;
 
@@ -13,6 +15,7 @@ import static service.PostFactory.MAX_POST_BODY_LENGTH;
 import static service.PostFactory.MAX_POST_TITLE_LENGTH;
 import static util.RandomStringGenerator.generateAlphaNumericRandomString;
 
+@Execution(ExecutionMode.SAME_THREAD)
 public class PostNewPostTest extends AbstractTest {
 
   @Test

@@ -6,12 +6,15 @@ import jsonplaceholder.api.TestConfiguration;
 import model.Post;
 import org.apache.http.HttpStatus;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.parallel.Execution;
+import org.junit.jupiter.api.parallel.ExecutionMode;
 import service.PostFactory;
 import java.security.SecureRandom;
 
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.equalTo;
 
+@Execution(ExecutionMode.SAME_THREAD)
 public class PutPostsTest extends AbstractTest {
 
   @Test

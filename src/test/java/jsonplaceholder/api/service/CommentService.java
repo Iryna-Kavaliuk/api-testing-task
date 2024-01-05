@@ -14,16 +14,14 @@ public class CommentService {
         TestConfiguration.basePostPath + "/" + id + "/" + TestConfiguration.baseCommentPath;
     given().when().get().then().log().body();
     String response = given().when().get().asString();
-    Comment[] comments = new Gson().fromJson(response, Comment[].class);
-    return comments;
+    return new Gson().fromJson(response, Comment[].class);
   }
 
   public Comment[] getCommentsFilteredByPostId(int postId) {
     RestAssured.basePath = TestConfiguration.baseCommentPath;
     given().queryParam("postId", postId).when().get().then().log().body();
     String response = given().queryParam("postId", postId).when().get().asString();
-    Comment[] comments = new Gson().fromJson(response, Comment[].class);
-    return comments;
+    return new Gson().fromJson(response, Comment[].class);
   }
 
 }
